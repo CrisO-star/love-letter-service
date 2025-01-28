@@ -1,0 +1,92 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { motion } from "framer-motion";
+
+const LoveLetterService = () => {
+  return (
+    <div className="bg-gradient-to-b from-pink-100 to-red-200 min-h-screen py-10">
+      <header className="text-center mb-10">
+        <motion.h1
+          className="text-5xl font-bold text-red-600"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Love Letter Delivery Service
+        </motion.h1>
+        <p className="text-xl mt-4 text-red-800">
+          Say it from the heart—we’ll help deliver the message.
+        </p>
+      </header>
+
+      <main className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* About Section */}
+        <motion.div
+          className="col-span-1"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Card className="shadow-lg rounded-2xl">
+            <CardContent>
+              <h2 className="text-2xl font-semibold text-red-600 mb-4">
+                About Our Service
+              </h2>
+              <p className="text-gray-700">
+                Whether you’re confessing to a crush, expressing your love to a
+                partner, or surprising someone special, our Love Letter Delivery
+                Service helps you craft and deliver heartfelt messages that
+                leave a lasting impression. Choose to send it anonymously or
+                include your name for a personal touch.
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* Create Letter Section */}
+        <motion.div
+          className="col-span-1"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Card className="shadow-lg rounded-2xl">
+            <CardContent>
+              <h2 className="text-2xl font-semibold text-red-600 mb-4">
+                Create Your Love Letter
+              </h2>
+              <form className="space-y-4">
+                <Input
+                  type="text"
+                  placeholder="Recipient's Name"
+                  className="w-full"
+                />
+                <Textarea
+                  placeholder="Write your message here..."
+                  className="w-full h-32"
+                />
+                <Input
+                  type="text"
+                  placeholder="Your Name (Optional)"
+                  className="w-full"
+                />
+                <Button className="w-full bg-red-500 text-white hover:bg-red-600">
+                  Send Your Letter
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </main>
+
+      <footer className="text-center mt-10 text-gray-600">
+        <p>© 2025 Love Letter Delivery Service | Crafted with ❤️ to bring people closer.</p>
+      </footer>
+    </div>
+  );
+};
+
+export default LoveLetterService;
